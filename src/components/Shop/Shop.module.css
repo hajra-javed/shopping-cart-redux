@@ -1,0 +1,8 @@
+.shop{
+    display: grid;
+    /* width: 100%; */
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-around;
+    /* gap: 5em; */
+    margin: 5em;
+}

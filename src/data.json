@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Sapphire earrings",
+        "price": "$2.00",
+        "path": "/red.jpg",
+        "id": 1
+    },
+    {
+        "name": "Emerald earrinngs",
+        "price": "$2.00",
+        "path": "/red.jpg",
+        "id": 2
+    },
+    {
+        "name": "Opal earrings",
+        "price": "$2.00",
+        "path": "/red.jpg",
+        "id": 3
+    },
+    {
+        "name": "Ruby earrings",
+        "price": "$2.00",
+        "path": "/red.jpg",
+        "id": 4
+    }
+]

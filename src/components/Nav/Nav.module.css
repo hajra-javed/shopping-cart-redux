@@ -1,0 +1,56 @@
+nav{
+    opacity: 75%;
+    background-color: white;
+    /* position: absolute;
+    top: 0; */
+    width: 100%;
+}
+
+.home{
+    position: absolute;
+    top: 0;
+}
+
+ul{
+    display: flex;
+    justify-content: left;
+    padding: 0 40px;
+    gap: 2em;
+    align-items: center;
+}
+
+li{
+    list-style: none;
+    height: 1em;
+}
+
+li:hover{
+    cursor: pointer;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    position: relative;
+}
+
+.cart{
+    flex: 1;
+    text-align: right;
+}
+
+.invisible{
+    display: none;
+}
+
+.badge{
+    border: solid 1px;
+    /* height: 0.75em;
+    width: 0.75em; */
+    border-radius: 10px;
+    display: inline-block;
+    position: absolute;
+    padding: 0 0.3em;
+    font-size: 10px;
+    background-color: lightpink;
+}
