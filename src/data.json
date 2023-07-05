@@ -1,26 +1,74 @@
 [
     {
-        "name": "Sapphire earrings",
-        "price": "$2.00",
-        "path": "/red.jpg",
+        "name": "Brownie",
+        "price": 2.25,
+        "path": "/brownie.jpg",
         "id": 1
     },
     {
-        "name": "Emerald earrinngs",
-        "price": "$2.00",
-        "path": "/red.jpg",
+        "name": "Cheesecake",
+        "price": 4,
+        "path": "/cheesecake.jpg",
         "id": 2
     },
     {
-        "name": "Opal earrings",
-        "price": "$2.00",
-        "path": "/red.jpg",
+        "name": "Chocolate",
+        "price": 1,
+        "path": "/chocolate.jpg",
         "id": 3
     },
     {
-        "name": "Ruby earrings",
-        "price": "$2.00",
-        "path": "/red.jpg",
+        "name": "Cookie",
+        "price": 1.5,
+        "path": "/cookie.jpg",
         "id": 4
+    },
+    {
+        "name": "Cupcake",
+        "price": 2.75,
+        "path": "/cupcake.jpg",
+        "id": 5
+    },
+    {
+        "name": "Doughnut",
+        "price": 1,
+        "path": "/doughnut.jpg",
+        "id": 6
+    },
+    {
+        "name": "Eclairs",
+        "price": 2,
+        "path": "/eclairs.jpg",
+        "id": 7
+    },
+    {
+        "name": "Icecream",
+        "price": 1,
+        "path": "/icecream.jpg",
+        "id": 8
+    },
+    {
+        "name": "Lollipop",
+        "price": 0.25,
+        "path": "/lollipop.jpg",
+        "id": 9
+    },
+    {
+        "name": "Macarons",
+        "price": 1,
+        "path": "/macarons.jpg",
+        "id": 10
+    },
+    {
+        "name": "Stroopwaffles",
+        "price": 1.25,
+        "path": "/stroopwaffles.jpg",
+        "id": 11
+    },
+    {
+        "name": "Waffles",
+        "price": 2,
+        "path": "/waffles.jpg",
+        "id": 12
     }
 ]

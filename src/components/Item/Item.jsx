@@ -24,12 +24,12 @@ function Item(props) {
 
     return (
         <div className={`${style.item} ${props.className}`}>
-            <img src={require('../../assets' + props.path)} alt={props.name} />
-            <div className={style.price}>{props.price}</div>
+            <img className={style.img} src={require('../../assets' + props.path)} alt={props.name} />
+            <div className={style.price}>${props.price.toFixed(2)}</div>
             <div className={style.name}>{props.name}</div>
-            {!count ?
+            {!props.quantity ?
                 <button onClick={handleAdd}>Add to cart</button> :
-                <IncDecBtn count={count} onAdd={handleAdd} onRemove={handleRemove}/>}
+                <IncDecBtn count={props.quantity} onAdd={handleAdd} onRemove={handleRemove}/>}
         </div>
     )
 };

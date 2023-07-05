@@ -1,0 +1,29 @@
+.item{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    /* border-style: inset; */
+    background-color: #f7f7f7;
+    justify-content: space-between;
+}
+
+.img{
+    width: 30%;
+    height: auto;
+    object-fit: cover;
+}
+
+.details{
+}
+
+.price, .quantity{
+    /* width: 100%; */
+    /* font-size: 1.5em; */
+    /* margin-bottom: 0.2em; */
+    text-align: right;
+}
+
+.name{
+    margin-bottom: 0.2em;
+    font-size: 1.5em;
+}

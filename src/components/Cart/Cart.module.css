@@ -1,0 +1,38 @@
+.overlay{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 40%;
+}
+.cart{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 25vw;
+    background-color: white;
+    border-left: solid 2px black;
+    box-sizing: border-box;
+    padding: 1em;
+}
+
+.heading{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.close{
+    text-align: right;
+    /* padding-right: 1em; */
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.close:hover{
+    cursor: pointer;
+}

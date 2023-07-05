@@ -1,8 +1,14 @@
+.container{
+    position: relative;
+    flex: 1;
+}
+
 .shop{
     display: grid;
     /* width: 100%; */
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
     justify-content: space-around;
-    /* gap: 5em; */
-    margin: 5em;
+    gap: 5em;
+    padding: 5em;
 }

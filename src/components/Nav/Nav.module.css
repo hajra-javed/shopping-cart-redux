@@ -17,6 +17,7 @@ ul{
     padding: 0 40px;
     gap: 2em;
     align-items: center;
+    position: relative;
 }
 
 li{
@@ -35,7 +36,8 @@ a {
 }
 
 .cart{
-    flex: 1;
+    position: absolute;
+    right: 2em;
     text-align: right;
 }
 
