@@ -1,7 +1,6 @@
 import style from './Shop.module.css';
 import t_data from '../../data.json';
 import Item from '../Item/Item';
-// import uniqid from 'uniqid';
 import { useEffect, memo } from 'react';
 import { Outlet } from 'react-router-dom';
 
@@ -13,7 +12,6 @@ function Shop(props) {
     });
 
     function checkQuantity(id){
-        console.log(id);
         const itemIndex = props.items.findIndex((item) => item.key === id);
         if (itemIndex !== -1){
             return props.items[itemIndex].quantity;
@@ -34,7 +32,6 @@ function Shop(props) {
         <div className={style.container}>
             <div className={`${style.shop} ${props.className}`}>
                 {data.map((item, index) => {
-                    // console.log(item.id);
                     const quantity = checkQuantity(item.id);
                     return (
                         <Item

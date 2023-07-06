@@ -1,12 +1,20 @@
 import style from './Cart.module.css';
 import CartItem from '../CartItem/CartItem';
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 function Cart(props) {
-    useEffect(() => {
-        console.log(props.items[0]);
-    });
+
+    function handleDelete(item) {
+        props.deleteItem(-1 * item.quantity, item);
+    };
+
+    function getTotalAmount() {
+        let amount = 0;
+        props.items.forEach(item => {
+            amount = amount + item.quantity * item.price;
+        });
+        return amount;
+    };
 
     return (
         <>
@@ -19,9 +27,26 @@ function Cart(props) {
                         close
                     </div>
                 </Link>
-                {props.items.map((item) => {
-                    return CartItem(item)
-                })}
+                {props.items.length ?
+                    <>
+                    {props.items.map((item) => {
+                        return (
+                        <CartItem
+                            key={item.key}
+                            id={item.key}
+                            name={item.name}
+                            price={item.price}
+                            path={item.path}
+                            quantity={item.quantity}
+                            onDelete={handleDelete}
+                        />
+                        )
+                    })}
+                        <div className={style.totalAmount}>Total Amount: ${getTotalAmount().toFixed(2)}</div>
+                        <button className={style.checkout}>Checkout</button>
+                    </> :
+                    <div className={style.cartEmpty}>Cart is empty!</div>
+                }
             </div>
         </>
     )

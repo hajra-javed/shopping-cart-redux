@@ -26,7 +26,7 @@ function App() {
   }, []);
 
   const handleUpdateCart = useCallback((change, item) => {
-    const itemIndex = cart.items.findIndex((i) =>  i.key === item.id );
+    const itemIndex = cart.items.findIndex((i) => i.key === item.id);
     let newItems = cart.items;
 
     if (itemIndex !== -1) {
@@ -47,7 +47,7 @@ function App() {
         price: item.price,
         key: item.id,
         path: item.path,
-        quantity: change
+        quantity: 1
       });
     };
 
@@ -62,12 +62,14 @@ function App() {
   return (
     <BrowserRouter>
       <Nav className={tab} cartVisibility={cartVisibility} totalCount={cart.totalCount} />
+      <footer>
+        Copyright © github.com/hajra-javed
+      </footer>
       <Routes>
         <Route path='/' element={<Home className={style.main} initiated={handleInitialization} />} />
         <Route path='/shop' element={<Shop initiated={handleInitialization} updateCart={handleUpdateCart} items={cart.items} />} >
-          <Route path='/shop/cart' element={<Cart items={cart.items} />} />
+          <Route path='/shop/cart' element={<Cart items={cart.items} deleteItem={handleUpdateCart} />} />
         </Route>
-        {/* <Route path='/shop/cart' element={<Cart items={cart.items} />} /> */}
       </Routes>
     </BrowserRouter>
   );

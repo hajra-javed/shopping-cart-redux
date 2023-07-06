@@ -4,21 +4,12 @@ import IncDecBtn from '../IncDecBtn/IncDecBtn';
 import { useEffect, memo } from 'react';
 
 function Item(props) {
-    const [count, setCount] = useState(0);
-
-    // useEffect(()=>{
-    //     // console.log(count);
-    //     // props.onAdd();
-    //     // console.log(props);
-    // }, [count]);
 
     function handleAdd() {
-        setCount(count + 1);
         props.onAdd(props);   
     };
 
     function handleRemove() {
-        setCount(count - 1);
         props.onRemove(props);
     };
 

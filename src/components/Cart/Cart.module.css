@@ -36,3 +36,16 @@
 .close:hover{
     cursor: pointer;
 }
+
+.cartEmpty{
+    text-align: center;
+}
+
+.totalAmount{
+    text-align: right;
+}
+
+.checkout{
+    background-color: black;
+    color: white;
+}

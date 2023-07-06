@@ -2,11 +2,6 @@
     display: flex;
 }
 
-button{
-    background-color: white;
-    border: solid 1px black;
-}
-
 .add, .remove{
     align-items: center;
     width: 1.25rem;

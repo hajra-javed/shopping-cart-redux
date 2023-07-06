@@ -12,6 +12,7 @@ function Home(props){
     return(
         <div className={`${style.home} ${props.className}`}>
             <img className={style.background} src={background} alt="" />
+            <div className={style.text}>Elevate your tastebuds with our most tempting treats stuffed with pure goodness!</div>
         </div>
     )
 };
