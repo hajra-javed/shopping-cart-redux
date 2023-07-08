@@ -13,7 +13,7 @@ function Nav(props) {
                 <li className={`${style.navItem}`}><Link to='shopping-cart' >HOME</Link></li>
                 <li className={`${style.navItem}`}><Link to='shopping-cart/shop' >SHOP</Link></li>
                 <li className={`${style.navItem} ${style.cart} ${cartVisibility}`} >
-                    <Link to='/shop/cart'>
+                    <Link to='shopping-cart/shop/cart'>
                         <span className="material-symbols-outlined">shopping_basket</span>
                         {<div className={style.badge}>{props.totalCount}</div>}
                     </Link>

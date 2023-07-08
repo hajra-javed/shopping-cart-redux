@@ -22,7 +22,7 @@ function Cart(props) {
             <div className={style.cart}>
                 <div className={style.heading}>Cart</div>
 
-                <Link to='/shop'>
+                <Link to='/shopping-cart/shop'>
                     <div className={`material-symbols-outlined ${style.close}`}>
                         close
                     </div>

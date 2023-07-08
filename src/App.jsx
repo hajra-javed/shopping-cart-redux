@@ -68,7 +68,7 @@ function App() {
       <Routes>
         <Route path='/shopping-cart' element={<Home className={style.main} initiated={handleInitialization} />} />
         <Route path='/shopping-cart/shop' element={<Shop initiated={handleInitialization} updateCart={handleUpdateCart} items={cart.items} />} >
-          <Route path='/shop/cart' element={<Cart items={cart.items} deleteItem={handleUpdateCart} />} />
+          <Route path='/shopping-cart/shop/cart' element={<Cart items={cart.items} deleteItem={handleUpdateCart} />} />
         </Route>
       </Routes>
     </BrowserRouter>
