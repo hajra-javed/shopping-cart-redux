@@ -10,8 +10,8 @@ function Nav(props) {
     return (
         <nav className={tab}>
             <ul>
-                <li className={`${style.navItem}`}><Link to='' >HOME</Link></li>
-                <li className={`${style.navItem}`}><Link to='/shop' >SHOP</Link></li>
+                <li className={`${style.navItem}`}><Link to='shopping-cart' >HOME</Link></li>
+                <li className={`${style.navItem}`}><Link to='shopping-cart/shop' >SHOP</Link></li>
                 <li className={`${style.navItem} ${style.cart} ${cartVisibility}`} >
                     <Link to='/shop/cart'>
                         <span className="material-symbols-outlined">shopping_basket</span>
