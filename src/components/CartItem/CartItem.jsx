@@ -7,7 +7,7 @@ function CartItem(props) {
     const ctx = useContext(CartContext);
 
     function handleDelete() {
-        ctx.updateCart(props.quantity ,props);
+        ctx.updateCart(-props.quantity ,props);
     }
     return (
         <div className={style.item}>
