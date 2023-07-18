@@ -5,13 +5,12 @@ import style from './App.module.css';
 import Home from './components/Home/Home';
 import Shop from './components/Shop/Shop';
 import Cart from './components/Cart/Cart';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useCallback } from 'react';
 
 function App() {
   const [tab, setTab] = useState('home');
   const [cartVisibility, setCartVisibility] = useState('invisible');
-  const [cart, setCart] = useState({ items: [], totalCount: 0 });
 
   const handleInitialization = useCallback((tab) => {
     {
@@ -25,52 +24,18 @@ function App() {
     }
   }, []);
 
-  const handleUpdateCart = useCallback((change, item) => {
-    const itemIndex = cart.items.findIndex((i) => i.key === item.id);
-    let newItems = cart.items;
-
-    if (itemIndex !== -1) {
-      if (change === 1 || (change === -1 && newItems[itemIndex].quantity > 1)) {
-        newItems[itemIndex] = {
-          name: item.name,
-          price: item.price,
-          key: item.id,
-          path: item.path,
-          quantity: newItems[itemIndex].quantity + change
-        };
-      } else {
-        newItems.splice(itemIndex, 1);
-      }
-    } else {
-      newItems.push({
-        name: item.name,
-        price: item.price,
-        key: item.id,
-        path: item.path,
-        quantity: 1
-      });
-    };
-
-    setCart((cart) => (
-      {
-        items: newItems,
-        totalCount: cart.totalCount + change
-      })
-    );
-  }, [cart]);
-
   return (
     <BrowserRouter>
-      <Nav className={tab} cartVisibility={cartVisibility} totalCount={cart.totalCount} />
-      <footer>
-        Copyright © github.com/hajra-javed
-      </footer>
-      <Routes>
-        <Route path='/shopping-cart' element={<Home className={style.main} initiated={handleInitialization} />} />
-        <Route path='/shopping-cart/shop' element={<Shop initiated={handleInitialization} updateCart={handleUpdateCart} items={cart.items} />} >
-          <Route path='/shopping-cart/shop/cart' element={<Cart items={cart.items} deleteItem={handleUpdateCart} />} />
-        </Route>
-      </Routes>
+        <Nav className={tab} cartVisibility={cartVisibility} />
+        <footer>
+          Copyright © github.com/hajra-javed
+        </footer>
+        <Routes>
+          <Route path='/shopping-cart' element={<Home className={style.main} initiated={handleInitialization} />} />
+          <Route path='/shopping-cart/shop' element={<Shop initiated={handleInitialization} />} >
+            <Route path='/shopping-cart/shop/cart' element={<Cart />} />
+          </Route>
+        </Routes>
     </BrowserRouter>
   );
 }

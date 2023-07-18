@@ -1,16 +1,18 @@
 import { useState } from 'react';
 import style from './Item.module.css';
 import IncDecBtn from '../IncDecBtn/IncDecBtn';
-import { useEffect, memo } from 'react';
+import { useEffect, memo, useContext } from 'react';
+import CartContext from '../../store/cart-context';
 
 function Item(props) {
+    const ctx = useContext(CartContext);
 
     function handleAdd() {
-        props.onAdd(props);   
+        ctx.updateCart(1, props);   
     };
 
     function handleRemove() {
-        props.onRemove(props);
+        ctx.updateCart(-1, props);
     };
 
     return (

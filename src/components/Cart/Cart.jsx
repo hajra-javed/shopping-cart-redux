@@ -1,16 +1,16 @@
 import style from './Cart.module.css';
 import CartItem from '../CartItem/CartItem';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import CartContext from '../../store/cart-context';
 
 function Cart(props) {
 
-    function handleDelete(item) {
-        props.deleteItem(-1 * item.quantity, item);
-    };
+    const ctx = useContext(CartContext);
 
     function getTotalAmount() {
         let amount = 0;
-        props.items.forEach(item => {
+        ctx.items.forEach(item => {
             amount = amount + item.quantity * item.price;
         });
         return amount;
@@ -27,9 +27,9 @@ function Cart(props) {
                         close
                     </div>
                 </Link>
-                {props.items.length ?
+                {ctx.items.length ?
                     <>
-                    {props.items.map((item) => {
+                    {ctx.items.map((item) => {
                         return (
                         <CartItem
                             key={item.key}
@@ -38,7 +38,6 @@ function Cart(props) {
                             price={item.price}
                             path={item.path}
                             quantity={item.quantity}
-                            onDelete={handleDelete}
                         />
                         )
                     })}

@@ -1,9 +1,13 @@
+import { useContext } from 'react';
+import CartContext from '../../store/cart-context';
 import style from './CartItem.module.css';
 
 function CartItem(props) {
 
+    const ctx = useContext(CartContext);
+
     function handleDelete() {
-        props.onDelete(props);
+        ctx.updateCart(props.quantity ,props);
     }
     return (
         <div className={style.item}>
