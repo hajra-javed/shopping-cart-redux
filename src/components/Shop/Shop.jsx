@@ -1,23 +1,22 @@
 import style from './Shop.module.css';
 import t_data from '../../data.json';
 import Item from '../Item/Item';
-import { useEffect, memo } from 'react';
+import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
-import { useContext } from 'react';
-import CartContext from '../../store/cart-context';
+import { useSelector } from 'react-redux';
 
 function Shop(props) {
     const data = JSON.parse(JSON.stringify(t_data));
-    const ctx = useContext(CartContext);
+    const items = useSelector(state => state.cartReducer.items);
 
     useEffect(() => {
         props.initiated('shop');
     });
 
     function checkQuantity(id){
-        const itemIndex = ctx.items.findIndex((item) => item.key === id);
+        const itemIndex = items.findIndex((item) => item.key === id);
         if (itemIndex !== -1){
-            return ctx.items[itemIndex].quantity;
+            return items[itemIndex].quantity;
         } else {
             return 0;
         };
@@ -26,8 +25,9 @@ function Shop(props) {
     return (
         <div className={style.container}>
             <div className={`${style.shop} ${props.className}`}>
-                {data.map((item, index) => {
+                {data.map((item) => {
                     const quantity = checkQuantity(item.id);
+                    console.log(quantity);
                     return (
                         <Item
                             key={item.id}
@@ -44,4 +44,4 @@ function Shop(props) {
     )
 };
 
-export default memo(Shop);
+export default Shop;

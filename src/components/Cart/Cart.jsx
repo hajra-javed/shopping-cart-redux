@@ -1,16 +1,15 @@
 import style from './Cart.module.css';
 import CartItem from '../CartItem/CartItem';
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
-import CartContext from '../../store/cart-context';
+import { useSelector } from 'react-redux';
 
 function Cart(props) {
 
-    const ctx = useContext(CartContext);
+    const items = useSelector(state => state.cartReducer.items);
 
     function getTotalAmount() {
         let amount = 0;
-        ctx.items.forEach(item => {
+        items.forEach(item => {
             amount = amount + item.quantity * item.price;
         });
         return amount;
@@ -22,14 +21,14 @@ function Cart(props) {
             <div className={style.cart}>
                 <div className={style.heading}>Cart</div>
 
-                <Link to='/shopping-cart/shop'>
+                <Link to='/shopping-cart-redux/shop'>
                     <div className={`material-symbols-outlined ${style.close}`}>
                         close
                     </div>
                 </Link>
-                {ctx.items.length ?
+                {items.length ?
                     <>
-                    {ctx.items.map((item) => {
+                    {items.map((item) => {
                         return (
                         <CartItem
                             key={item.key}

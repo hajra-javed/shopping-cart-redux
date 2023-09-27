@@ -1,18 +1,18 @@
-import { useState } from 'react';
 import style from './Item.module.css';
 import IncDecBtn from '../IncDecBtn/IncDecBtn';
-import { useEffect, memo, useContext } from 'react';
-import CartContext from '../../store/cart-context';
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../../store/cart-slice';
 
 function Item(props) {
-    const ctx = useContext(CartContext);
+    const dispatch = useDispatch();
+    // const ctx = useContext(CartContext);
 
     function handleAdd() {
-        ctx.updateCart(1, props);   
+        dispatch(cartActions.increment({change: 1, item: props}));   
     };
 
     function handleRemove() {
-        ctx.updateCart(-1, props);
+        dispatch(cartActions.decrement({change: 1, item: props}));   
     };
 
     return (

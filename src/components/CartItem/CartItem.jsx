@@ -1,14 +1,16 @@
-import { useContext } from 'react';
-import CartContext from '../../store/cart-context';
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../../store/cart-slice';
 import style from './CartItem.module.css';
+
 
 function CartItem(props) {
 
-    const ctx = useContext(CartContext);
+    const dispatch = useDispatch();
 
     function handleDelete() {
-        ctx.updateCart(-props.quantity ,props);
+        dispatch(cartActions.decrement({change: props.quantity, item: props}));
     }
+
     return (
         <div className={style.item}>
             <img className={style.img} src={require('../../assets' + props.path)} alt={props.name} />
